@@ -1,3 +1,5 @@
+import { Footer } from '@ko-ui-apps/footer';
+import { Header } from '@ko-ui-apps/header';
 import dynamic from 'next/dynamic';
 
 const AccountApp = dynamic(
@@ -10,7 +12,13 @@ const AccountApp = dynamic(
 );
 
 const Page = () => {
-  return <AccountApp />;
+  return (
+    <>
+      <Header />
+      <AccountApp />
+      <Footer />
+    </>
+  );
 };
 
 export default Page;
