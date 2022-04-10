@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "projects": {
+    "footer": "libs/footer",
+    "header": "libs/header",
+    "ui.account": "apps/ui.account",
+    "ui.account-e2e": "apps/ui.account-e2e",
+    "ui.category": "apps/ui.category",
+    "ui.category-e2e": "apps/ui.category-e2e",
+    "ui.content": "apps/ui.content",
+    "ui.content-e2e": "apps/ui.content-e2e",
+    "ui.main": "apps/ui.main",
+    "ui.order-tracking": "apps/ui.order-tracking",
+    "ui.order-tracking-e2e": "apps/ui.order-tracking-e2e",
+    "ui.product": "apps/ui.product",
+    "ui.search": "apps/ui.search",
+    "ui.search-e2e": "apps/ui.search-e2e"
+  }
+}

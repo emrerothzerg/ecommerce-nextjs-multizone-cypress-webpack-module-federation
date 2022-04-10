@@ -1,0 +1,28 @@
+{
+  "root": "apps/ui.order-tracking-e2e",
+  "sourceRoot": "apps/ui.order-tracking-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/ui.order-tracking-e2e/cypress.json",
+        "devServerTarget": "ui.order-tracking:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "ui.order-tracking:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/ui.order-tracking-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["ui.order-tracking"]
+}

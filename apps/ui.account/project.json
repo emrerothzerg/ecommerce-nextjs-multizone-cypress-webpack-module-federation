@@ -1,0 +1,74 @@
+{
+  "root": "apps/ui.account",
+  "sourceRoot": "apps/ui.account/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/ui.account",
+        "index": "apps/ui.account/src/index.html",
+        "baseHref": "/",
+        "main": "apps/ui.account/src/main.tsx",
+        "polyfills": "apps/ui.account/src/polyfills.ts",
+        "tsConfig": "apps/ui.account/tsconfig.app.json",
+        "assets": [
+          "apps/ui.account/src/favicon.ico",
+          "apps/ui.account/src/assets"
+        ],
+        "styles": [],
+        "scripts": [],
+        "webpackConfig": "apps/ui.account/webpack.config.js"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/ui.account/src/environments/environment.ts",
+              "with": "apps/ui.account/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "ui.account:build",
+        "hmr": true,
+        "port": 3005
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "ui.account:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/ui.account/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/ui.account"],
+      "options": {
+        "jestConfig": "apps/ui.account/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

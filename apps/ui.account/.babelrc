@@ -1,0 +1,8 @@
+{
+  "presets": [["@nrwl/react/babel", { "runtime": "automatic" }]],
+  "plugins": [
+    ["styled-components", { "pure": true, "ssr": true }],
+    "@babel/plugin-proposal-object-rest-spread",
+    "@babel/plugin-transform-runtime"
+  ]
+}

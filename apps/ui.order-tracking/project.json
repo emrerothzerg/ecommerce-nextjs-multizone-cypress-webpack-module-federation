@@ -1,0 +1,74 @@
+{
+  "root": "apps/ui.order-tracking",
+  "sourceRoot": "apps/ui.order-tracking/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/ui.order-tracking",
+        "index": "apps/ui.order-tracking/src/index.html",
+        "baseHref": "/",
+        "main": "apps/ui.order-tracking/src/main.tsx",
+        "polyfills": "apps/ui.order-tracking/src/polyfills.ts",
+        "tsConfig": "apps/ui.order-tracking/tsconfig.app.json",
+        "assets": [
+          "apps/ui.order-tracking/src/favicon.ico",
+          "apps/ui.order-tracking/src/assets"
+        ],
+        "styles": [],
+        "scripts": [],
+        "webpackConfig": "apps/ui.order-tracking/webpack.config.js"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/ui.order-tracking/src/environments/environment.ts",
+              "with": "apps/ui.order-tracking/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "ui.order-tracking:build",
+        "hmr": true,
+        "port": 3006
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "ui.order-tracking:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/ui.order-tracking/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/ui.order-tracking"],
+      "options": {
+        "jestConfig": "apps/ui.order-tracking/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
