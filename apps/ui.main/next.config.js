@@ -92,7 +92,7 @@ const nextConfig = {
       },
       {
         source: '/category/:path*',
-        destination: `${CATEGORY_APP_URL}/search/:path*`,
+        destination: `${CATEGORY_APP_URL}/category/:path*`,
       },
       {
         source: '/content/:path*',
